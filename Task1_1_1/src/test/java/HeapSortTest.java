@@ -2,6 +2,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import org.example.HeapSort;
 
+import java.util.Arrays;
+import java.util.Random;
+
 public class HeapSortTest {
 
     @Test
@@ -31,6 +34,23 @@ public class HeapSortTest {
 
         HeapSort.sort(arr);
 
+        assertArrayEquals(expected, arr);
+    }
+
+    @Test
+    public void testBigMassive() {
+        int[] arr = new int[100000];
+        Random numbers = new Random();
+        for (int i = 0; i < 100000; i++)
+        {
+            int n = numbers.nextInt(2000000);
+            arr[i] = n;
+        }
+
+        int[] expected = Arrays.copyOf(arr, 100000);
+
+        HeapSort.sort(arr);
+        Arrays.sort(expected);
         assertArrayEquals(expected, arr);
     }
 
