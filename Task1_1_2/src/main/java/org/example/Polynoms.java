@@ -8,8 +8,10 @@ public class Polynoms {
     public Polynoms(double[] inputCoef) {
         if (inputCoef.length == 0) {
             coefficients = new double[]{0};
+            delZero();
         } else {
             coefficients = inputCoef.clone();
+            delZero();
         }
         delZero();
     }
@@ -45,14 +47,6 @@ public class Polynoms {
         double[] newCoef = new double[len];
         System.arraycopy(coefficients, 0, newCoef, 0, len);
         coefficients = newCoef;
-    }
-
-    public double getError_rate() {
-        return error_rate;
-    }
-
-    public void setError_rate(double error_rate) {
-        this.error_rate = error_rate;
     }
 
     public double[] getCoefficients() {

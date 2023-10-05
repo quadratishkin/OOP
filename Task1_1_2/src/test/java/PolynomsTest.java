@@ -20,14 +20,14 @@ public class PolynomsTest {
     }
 
     @Test
-    public void minusZeroTest() {
+    public void ansZeroTest() {
         Polynoms p1 = new Polynoms(new double[]{1, 2, 3, 4});
         Polynoms p2 = new Polynoms(new double[]{1, 2, 3, 4});
         assertEquals("0", p1.minus(p2).toString());
     }
 
     @Test
-    public void minusInnerZeroTest() {
+    public void alsoMinusTest() {
         Polynoms p1 = new Polynoms(new double[]{3, 9, 6, 7});
         Polynoms p2 = new Polynoms(new double[]{2, 9, 6, 6});
         Polynoms p3 = new Polynoms(new double[]{1.0, 0.0, 0.0, 1.0});
