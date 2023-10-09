@@ -3,7 +3,7 @@ plugins {
     id("jacoco")
 }
 
-group = "ru.nsu.khamidullin"
+group = "org.example"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -19,12 +19,8 @@ tasks.test {
     useJUnitPlatform()
 }
 
-tasks {
-    "jacocoTestReport"(JacocoReport::class) {
-        reports {
-            xml.required.set(true)
-            html.required.set(true)
-            html.outputLocation.set(layout.buildDirectory.dir("$buildDir/jacoco/jacocoHtml"))
-        }
+tasks.jacocoTestReport {
+    reports {
+        xml.required.set(true)
     }
 }
