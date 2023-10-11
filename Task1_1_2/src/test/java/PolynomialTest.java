@@ -30,7 +30,7 @@ public class PolynomialTest {
         var pol1 = new Polynomial(a1);
         var pol2 = new Polynomial(a2);
 
-        pol1 = pol1.plus(pol2);
+        pol1 = pol1.minus(pol2);
 
         int[] expected = {5, -1, 1, 8, -13};
 
