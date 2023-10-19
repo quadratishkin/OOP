@@ -83,6 +83,21 @@ public class PolynomialTest {
     }
 
     @Test
+    public void differentiateTestZero()
+    {
+        int[] a1 = {0};
+
+        var pol1 = new Polynomial(a1);
+
+        pol1 = pol1.differentiate(1);
+
+        int[] expected = {0};
+
+        assertArrayEquals(pol1.getCoefficients(), expected);
+
+    }
+
+    @Test
     public void toStringTest()
     {
         int[] a1 = {4, 7, 1, 0, 0, 6, 0};

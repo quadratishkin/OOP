@@ -80,10 +80,14 @@ public class Polynomial
 
     public Polynomial differentiate(int n)
     {
+        int[] compare = (new int[] {0});
         int[] result = Arrays.copyOf(this.coefficients, this.coefficients.length);
         if (n == 0)
         {
             result = delZero(result);
+            return new Polynomial(result);
+        }
+        if ( Arrays.equals(result, compare)){
             return new Polynomial(result);
         }
         result[this.coefficients.length - 1] = 0;
@@ -108,7 +112,8 @@ public class Polynomial
     @Override
     public String toString()
     {
-        var stroka = "";
+        StringBuilder stroka = new StringBuilder();
+        stroka.append("");
         boolean beginning = Boolean.TRUE;
         for (int i = this.coefficients.length - 1; i >= 0; i--)
         {
@@ -118,26 +123,27 @@ public class Polynomial
                 {
                     beginning = Boolean.FALSE;
                 }
+
                 else
                 {
-                    stroka = stroka.concat(" + ");
+                    stroka.append(" + ");
                 }
 
                 if (this.coefficients[i] != 1)
                 {
-                    stroka = stroka.concat("" + this.coefficients[i]);
+                    stroka.append("" + this.coefficients[i]);
                 }
                 if (i > 1)
                 {
-                    stroka = stroka.concat("x^" + i);
+                    stroka.append("x^" + i);
                 }
                 if (i == 1)
                 {
-                    stroka = stroka.concat("x");
+                    stroka.append("x");
                 }
             }
         }
-        return stroka;
+        return stroka.toString();
     }
 
     public int[] getCoefficients() {
