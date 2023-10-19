@@ -81,13 +81,14 @@ public class Polynomial
     public Polynomial differentiate(int n)
     {
         int[] compare = (new int[] {0});
+        int[] compare1 = (new int[] {});
         int[] result = Arrays.copyOf(this.coefficients, this.coefficients.length);
         if (n == 0)
         {
             result = delZero(result);
             return new Polynomial(result);
         }
-        if ( Arrays.equals(result, compare)){
+        if (( Arrays.equals(result, compare)) || (Arrays.equals(result, compare1))){
             return new Polynomial(result);
         }
         result[this.coefficients.length - 1] = 0;
@@ -112,8 +113,7 @@ public class Polynomial
     @Override
     public String toString()
     {
-        StringBuilder stroka = new StringBuilder();
-        stroka.append("");
+        StringBuilder stroka = new StringBuilder("");
         boolean beginning = Boolean.TRUE;
         for (int i = this.coefficients.length - 1; i >= 0; i--)
         {
@@ -131,11 +131,12 @@ public class Polynomial
 
                 if (this.coefficients[i] != 1)
                 {
-                    stroka.append("" + this.coefficients[i]);
+                    stroka.append(this.coefficients[i]);
                 }
                 if (i > 1)
                 {
-                    stroka.append("x^" + i);
+                    stroka.append("x^");
+                    stroka.append(i);
                 }
                 if (i == 1)
                 {
