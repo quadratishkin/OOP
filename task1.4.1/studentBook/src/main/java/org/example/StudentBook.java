@@ -52,30 +52,24 @@ public class StudentBook {
             System.out.println("Возможности получить повышенную стипендию уже нет");
         }
     }
-    public void isPossibleToGetRedDiploma() {
+    public Runnable isPossibleToGetRedDiploma = () -> {
         float count = 0;
         float countFive = 0;
-        boolean isPossible = true;
-        for (Subject item : this.subjects)
-        {
+        for (Subject item : this.subjects) {
             count++;
-            if (item.getMark() == 5){
+            if (item.getMark() == 5) {
                 countFive++;
             }
-            if((item.getMark() == 3) || (this.diplomWork !=5)){
-                isPossible = false;
+            if ((item.getMark() == 3) || (this.diplomWork != 5)) {
+                System.out.println("У вас нет шанса получить красный диплом");
+                return;
             }
         }
-        if(countFive/count<0.75){
-            isPossible = false;
+        if (countFive / count < 0.75) {
+            System.out.println("У вас нет шанса получить красный диплом");
+            return;
         }
-
-        if(isPossible){
-            System.out.println("У вас есть шанс на полученне красного диплома");
-        }else{
-            System.out.println("Возможности получить красный диплом уже нет");
-        }
-
-    }
+        System.out.println("У вас есть шанс получить красный диплом");
+    };
 
 }
