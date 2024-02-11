@@ -9,7 +9,7 @@ public class minus implements Operations {
         this.num1 = a1;
         this.num2 = a2;
     }
-    public double count() {
+    public Double count() {
         return num1 - num2;
     }
 }

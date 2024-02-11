@@ -7,7 +7,7 @@ public class log implements Operations {
     public log(Double a1){
         this.num1 = a1;
     }
-    public double count() {
+    public Double count() {
         return Math.log10(num1);
     }
 }

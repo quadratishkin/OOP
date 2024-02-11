@@ -7,7 +7,7 @@ public class sin implements Operations {
     public sin(Double a1){
         this.num1 = a1;
     }
-    public double count() {
+    public Double count() {
         return Math.sin(num1);
     }
 }

@@ -7,7 +7,7 @@ public class cos implements Operations {
     public cos(Double a1){
         this.num1 = a1;
     }
-    public double count() {
+    public Double count() {
         return Math.cos(num1);
     }
 }

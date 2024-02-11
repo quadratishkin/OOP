@@ -7,7 +7,7 @@ public class sqrt implements Operations {
     public sqrt(Double a1){
         this.num1 = a1;
     }
-    public double count() {
+    public Double count() {
         return Math.sqrt(num1);
     }
 }
