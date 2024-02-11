@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Calculator calc = new Calculator();
-        Double result = calc.calculate("pow sqrt + / 6 3 2 2");
+        Double result = calc.calculate("sqrt 4");
         System.out.println(result);
     }
 }

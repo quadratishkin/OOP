@@ -2,7 +2,6 @@ package org.example;
 
 import org.example.operations.*;
 
-import java.util.Stack;
 
 public class OperationFactory {
 
