@@ -2,12 +2,10 @@ package org.example.operations;
 
 import org.example.Operations;
 
+import java.util.Stack;
+
 public class cos implements Operations {
-    private Double num1;
-    public cos(Double a1){
-        this.num1 = a1;
-    }
-    public Double count() {
-        return Math.cos(num1);
+    public Double count(Stack<Double> stack) {
+        return stack.push(Math.cos(stack.pop()));
     }
 }

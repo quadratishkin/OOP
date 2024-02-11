@@ -2,12 +2,10 @@ package org.example.operations;
 
 import org.example.Operations;
 
+import java.util.Stack;
+
 public class sin implements Operations {
-    private Double num1;
-    public sin(Double a1){
-        this.num1 = a1;
-    }
-    public Double count() {
-        return Math.sin(num1);
+    public Double count(Stack<Double> stack) {
+        return stack.push(Math.sin(stack.pop()));
     }
 }
