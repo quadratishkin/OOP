@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.operations.*;
+
 import javax.management.RuntimeErrorException;
 import java.util.Stack;
 
@@ -20,17 +22,20 @@ public class Calculator {
                     case ("+"):
                         a1 = myStack.pop();
                         a2 = myStack.pop();
-                        myStack.push(a1 + a2);
+                        plus plus = new plus(a1, a2);
+                        myStack.push(plus.count());
                         break;
                     case ("-"):
                         a1 = myStack.pop();
                         a2 = myStack.pop();
-                        myStack.push(a1 - a2);
+                        minus minus = new minus(a1, a2);
+                        myStack.push(minus.count());
                         break;
                     case ("*"):
                         a1 = myStack.pop();
                         a2 = myStack.pop();
-                        myStack.push(a1 * a2);
+                        mul mul = new mul(a1, a2);
+                        myStack.push(mul.count());
                         break;
                     case ("/"):
                         a1 = myStack.pop();
@@ -38,42 +43,41 @@ public class Calculator {
                         if(a2 == 0){
                             throw new RuntimeException("деление на 0");
                         }
-                        myStack.push(a1 / a2);
+                        devide devide = new devide(a1,a2);
+                        myStack.push(devide.count());
                         break;
                     case ("log"):
                         a1 = myStack.pop();
                         if(a1 < 0){
                             throw new RuntimeException("подлогарифмическое выражение отриацательное");
                         }
-                        if (a1 <= 0) {
-                            return 0;
-                        }
-                        myStack.push(Math.log10(a1));
+                        log log = new log(a1);
+                        myStack.push(log.count());
                         break;
                     case ("pow"):
                         a1 = myStack.pop();
                         a2 = myStack.pop();
-                        myStack.push(Math.pow(a1, a2));
+                        pow pow = new pow(a1, a2);
+                        myStack.push(pow.count());
                         break;
                     case ("sqrt"):
                         a1 = myStack.pop();
                         if(a1 < 0){
                             throw new RuntimeException("отрицательное значние под корнем");
                         }
-                        if (a1 < 0) {
-                            return 0;
-                        }
-                        myStack.push(Math.sqrt(a1));
+                        sqrt sqrt = new sqrt(a1);
+                        myStack.push(sqrt.count());
                         break;
                     case("sin"):
                         a1 = myStack.pop();
-                        myStack.push(Math.sin(a1));
+                        sin sin = new sin(a1);
+                        myStack.push(sin.count());
                         break;
                     case("cos"):
                         a1 = myStack.pop();
-                        myStack.push(Math.cos(a1));
+                        cos cos = new cos(a1);
+                        myStack.push(cos.count());
                         break;
-
                 }
             }
         }
